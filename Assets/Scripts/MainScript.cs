@@ -34,6 +34,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         /// </summary>
         public GameObject spawnedObject { get; private set; }
         public Slider ScaleSlider;
+        public GameObject playButton;
 
         public void onValueChange()
         {
@@ -43,6 +44,16 @@ namespace UnityEngine.XR.ARFoundation.Samples
             //selectedInstrument.sizeScale = newScale;
             //selectedInstrument.transform.localScale = newSize;
             //InstructionText.text = selectedInstrument.name +" : "+ holding.ToString()+", "+ newScale.ToString()+", "+ instrumentSizeSlider.value.ToString();
+        }
+
+        public void playMusic()
+        {
+            Debug.Log($"play music!");
+            var fmodInstance = FMODUnity.RuntimeManager.CreateInstance("event:/ARGoose/Soprano");
+            fmodInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.gameObject));
+            fmodInstance.start();
+            //fmodInstance.setPaused(true);
+            fmodInstance.setPaused(false);
         }
 
         void Awake()

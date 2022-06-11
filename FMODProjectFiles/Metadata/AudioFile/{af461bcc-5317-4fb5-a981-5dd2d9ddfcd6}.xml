@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{dcff384a-8955-43fe-8d7d-6f9769a88d77}">
+	<object class="AudioFile" id="{af461bcc-5317-4fb5-a981-5dd2d9ddfcd6}">
 		<property name="assetPath">
 			<value>Classic Electric Piano.wav</value>
 		</property>
@@ -17,7 +17,7 @@
 			<value>51.989365079365079</value>
 		</property>
 		<relationship name="masterAssetFolder">
-			<destination>{068b2f39-d9d0-40ce-b450-1ee73fd12867}</destination>
+			<destination>{3d4ca191-728f-40ee-a6ff-ef1f988b09b9}</destination>
 		</relationship>
 	</object>
 </objects>
