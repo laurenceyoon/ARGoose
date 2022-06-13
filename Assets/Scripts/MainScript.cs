@@ -42,7 +42,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
             Initializing,
             Ready,
             Playing,
-            InstrumentSettings
+            GooseSettings
         }
         public UserState currentState;
         public Text InstructionText;
@@ -52,21 +52,21 @@ namespace UnityEngine.XR.ARFoundation.Samples
         private List<GameObject> GoosePrefabs;
         private List<string> names = new List<string>()
         {
-            "Soprano",
-            "Alto",
+            "Bass",
             "Tenor",
-            "Bass"
+            "Alto",
+            "Soprano",
         };
         private int counter = 0;
         private bool isDelay = false;
-        private Goose selectedGoose;
+        private GameObject selectedGoose;
         private bool holding;
 
         public void onValueChange()
         {
             float newScale = PitchSlider.value;
             Debug.Log($"newScale: {newScale}");
-            //selectedGoose.pitchScale = PitchSlider.value + 0.5f;
+            selectedGoose.GetComponent<Goose>().pitchScale = PitchSlider.value;
             //Vector3 newSize = new Vector3(newScale * selectedInstrument.originalSize.x, newScale * selectedInstrument.originalSize.y, newScale * selectedInstrument.originalSize.z);
             //selectedInstrument.sizeScale = newScale;
             //selectedInstrument.transform.localScale = newSize;
@@ -114,128 +114,93 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         void Update()
         {
-            //if (Input.touchCount > 0 && currentState == UserState.InstrumentSettings)
-            //{
-            //    //InstructionText.text = Input.GetTouch(0).position.ToString();
-            //    if (toggleInstrument != null && m_RaycastManager.Raycast(Input.GetTouch(0).position, s_Hits) && Input.GetTouch(0).position.y > 450 && Input.GetTouch(0).position.y < 2000)
-            //    {
-            //        var hitPose = s_Hits[0].pose;
-            //        var rot = hitPose.rotation.eulerAngles + rotDeg[toggleID] * Vector3.up;
-            //        toggleInstrument.gameObject.SetActive(true);
-            //        toggleInstrument.transform.position = hitPose.position;
-            //        toggleInstrument.transform.rotation = Quaternion.Euler(rot);
-            //        toggleInstrument.activate();
-            //        toggleInstrument = null;
-            //        menuController.deselectToggle();
-            //    }
-
-            //    if (Input.GetTouch(0).phase == TouchPhase.Began)
-            //    {
-            //        Ray ray = arCamera.ScreenPointToRay(Input.GetTouch(0).position);
-            //        RaycastHit hit;
-            //        if (Physics.Raycast(ray, out hit))
-            //        {
-            //            var instrumentDetection = hit.transform.GetComponent<Instrument>();
-            //            holding = instrumentDetection != null;
-            //            if (holding)
-            //            {
-            //                selectedInstrument = instrumentDetection;
-            //                toggleID = InstrumentPrefabs.FindIndex(obj => obj == selectedInstrument.gameObject);
-            //            }
-            //        }
-            //    }
-            //    if (Input.GetTouch(0).phase == TouchPhase.Ended)
-            //    {
-            //        if (holding)
-            //        {
-            //            instrumentSizeSlider.gameObject.SetActive(true);
-            //            InstrumentDeactivateButton.SetActive(true);
-            //            instrumentSizeSlider.value = (selectedInstrument.sizeScale - 0.5f) / 1.0f;
-            //        }
-            //        else
-            //        {
-            //            InstrumentDeactivateButton.SetActive(false);
-            //            instrumentSizeSlider.gameObject.SetActive(false);
-            //        }
-            //        holding = false;
-            //    }
-            //    if (m_RaycastManager.Raycast(Input.GetTouch(0).position, s_Hits))
-            //    {
-            //        var hitPose = s_Hits[0].pose;
-            //        var isTouchingSlider = false;
-            //        m_ped.position = Input.GetTouch(0).position;
-            //        List<RaycastResult> results = new List<RaycastResult>();
-            //        m_gr.Raycast(m_ped, results);
-
-            //        if (results.Count > 0)
-            //        {
-            //            if (results[0].gameObject.tag == "slider")
-            //                isTouchingSlider = true;
-            //        }
-            //        if (holding && !isTouchingSlider)
-            //        {
-            //            var rot = hitPose.rotation.eulerAngles + rotDeg[toggleID] * Vector3.up;
-            //            Move(hitPose.position, Quaternion.Euler(rot));
-            //        }
-            //    }
-            //}
             if (Input.touchCount > 0)
             {
+                //var hitPose = s_Hits[0].pose;
+                //InstructionText.text += $"\nhitPose: {hitPose}";
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
-                    Ray ray = arCamera.ScreenPointToRay(Input.GetTouch(0).position);
-                    RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit))
+                    InstructionText.text = $"GetTouch(0).phase == TouchPhase.Began";
+                    InstructionText.text += $"\nGetTouch(0): {Input.GetTouch(0)}";
+                    holding = true;
+                    if (!isDelay && m_RaycastManager.Raycast(Input.GetTouch(0).position, s_Hits))
                     {
-                        selectedGoose = hit.transform.GetComponent<Goose>();
-                        holding = selectedGoose != null;
+                        var hitPose = s_Hits[0].pose;
+                        if (counter < prefabList.Count)
+                        {
+                            isDelay = true;
+                            Invoke("setNextObject", 1.0f);
+                            InstructionText.text += $"\nPlace the {names[counter]}, updated counter: {counter}";
+                            instantiateGoose(hitPose);
+                            counter++;
+                            isDelay = false;
+                        }
+                        //else
+                        //{
+                        //    InstructionText.text += $"\n!!!!Move Move!!!1111 selectedGoose: {selectedGoose.name}";
+                        //    selectedGoose.transform.position = hitPose.position;
+                        //}
                     }
+                    //Ray ray = arCamera.ScreenPointToRay(Input.GetTouch(0).position);
+                    //InstructionText.text += $"\nray: {ray}";
+                    //RaycastHit hit;
+                    //if (Physics.Raycast(ray, out hit))
+                    //{
+                    //    InstructionText.text += $"\nrhit: {hit}";
+                    //    InstructionText.text += $"\nPhysics.Raycast(ray, out hit): {Physics.Raycast(ray, out hit)}";
+                    //    selectedGoose = hit.transform.GetComponent<Goose>();
+                    //    InstructionText.text += $"\nselectedGoose: {selectedGoose}";
+                    //    holding = selectedGoose != null;
+                    //}
                 }
-
                 if (Input.GetTouch(0).phase == TouchPhase.Ended)
                 {
+                    InstructionText.text += $"\nGetTouch(0).phase == TouchPhase.Ended";
                     holding = false;
                 }
-
-                if (m_RaycastManager.Raycast(Input.GetTouch(0).position, s_Hits))
-                {
-                    var hitPose = s_Hits[0].pose;
-                    if (counter < 4)
-                    {
-                        //isDelay = true;
-                        InstructionText.text = $"counter: {counter}";
-                        Invoke("setNextObject", 1.0f);
-                        InstructionText.text = "Hello";
-                        //isDelay = false;
-                        spawnedObject = Instantiate(prefabList[0], hitPose.position, hitPose.rotation);
-                        spawnedObject.SetActive(true);
-                        GoosePrefabs.Add(spawnedObject);
-                        string choirName = names[counter];
-                        InstructionText.text = $"Please Place the choir: {choirName}, updated counter: {counter}";
-                        var fmodInstance = FMODUnity.RuntimeManager.CreateInstance($"event:/ARGoose/{choirName}");
-                        spawnedObject.GetComponent<Goose>().Init(fmodInstance, choirName);
-                        //fmodInstances.Add(fmodInstance);
-                        fmodInstance.start();
-                        fmodInstance.setPaused(true);
-                        selectedGoose = spawnedObject.GetComponent<Goose>();
-                        counter++;
-                    }
-                    else
-                    {
-                        if (holding)
-                            Move(hitPose.position, hitPose.rotation);
-                    }
-                }
+                //if (selectedGoose != null)
+                //{
+                //    InstructionText.text += $"\n!!!!Move Move!!!22222222";
+                //    var hitPose = s_Hits[0].pose;
+                //    Move(hitPose.position, hitPose.rotation);
+                //}
             }
+            //if (Input.touchCount > 0 && !isDelay && m_RaycastManager.Raycast(Input.GetTouch(0).position, s_Hits))
+            //{
+            //    var hitPose = s_Hits[0].pose;
+            //    if (counter < prefabList.Count)
+            //    {
+            //        isDelay = true;
+            //        Invoke("setNextObject", 1.0f);
+            //        instantiateGoose(hitPose);
+            //        counter++;
+            //    }
+            //    else
+            //    {
+            //        if (holding)
+            //            Move(hitPose.position, hitPose.rotation);
+            //    }
+            //}
+        }
+
+        private void instantiateGoose(Pose hitPose)
+        {
+            spawnedObject = Instantiate(prefabList[counter], hitPose.position, hitPose.rotation);
+            spawnedObject.SetActive(true);
+            GoosePrefabs.Add(spawnedObject);
+            var fmodInstance = FMODUnity.RuntimeManager.CreateInstance("event:/ARGoose/" + names[counter]);
+            spawnedObject.GetComponent<Goose>().Init(fmodInstance, names[counter]);
+            fmodInstances.Add(fmodInstance);
+            selectedGoose = spawnedObject;
         }
 
         private void setNextObject()
         {
             isDelay = false;
-            InstructionText.text = $"setNextObject, counter: {counter}";
-            if (counter < 4)
+            InstructionText.text += $"\nsetNextObject, counter: {counter}";
+            if (counter < prefabList.Count)
             {
-                InstructionText.text = $"Place the {names[counter]}, updated counter: {counter}";
+                InstructionText.text += $"\nPlace the {names[counter]}, updated counter: {counter}";
             }
         }
 
@@ -243,18 +208,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
         {
             selectedGoose.transform.position = position;
             selectedGoose.transform.rotation = rotation;
-            //instances[selectedIndex].set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(spawnedObject));
-        }
-
-        private void initGoose(Pose hitPose, int index)
-        {
-            spawnedObject = Instantiate(prefabList[index], hitPose.position, hitPose.rotation);
-            spawnedObject.SetActive(false);
-            GoosePrefabs.Add(spawnedObject);
-            var fmodInstance = FMODUnity.RuntimeManager.CreateInstance("event:/ARGoose/" + names[index]);
-            var goose = spawnedObject.GetComponent<Goose>();
-            goose.Init(fmodInstance, names[index]);
-            fmodInstances.Add(fmodInstance);
         }
 
         static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
