@@ -1,6 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5981461895102247044
+--- !u!114 &-6131665011539633231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ARGoose/Alto
+  m_EditorClassIdentifier: 
+  Path: event:/ARGoose/Alto
+  Guid:
+    Data1: 648248217
+    Data2: 1323778711
+    Data3: 1394568095
+    Data4: 1334719272
+  Banks:
+  - {fileID: -1232097060469117408}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50533
+--- !u!114 &-5281892077659095015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ARGoose/Bass
+  m_EditorClassIdentifier: 
+  Path: event:/ARGoose/Bass
+  Guid:
+    Data1: -964145106
+    Data2: 1204084478
+    Data3: -818926968
+    Data4: -1662699666
+  Banks:
+  - {fileID: -1232097060469117408}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 51276
+--- !u!114 &-5203176465896130559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODProjectFiles/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637906732670000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1194
+  Exists: 1
+--- !u!114 &-5001369575180423113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,13 +86,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: FMODProjectFiles/FMOD/Build/Desktop/Master.strings.bank
+  Path: FMODProjectFiles/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637905831360000000
+  lastModified: 637906732670000000
   FileSizes:
   - Name: Desktop
-    Value: 764
+    Value: 966
+  Exists: 1
+--- !u!114 &-3116199078049356739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ARGoose/Tenor
+  m_EditorClassIdentifier: 
+  Path: event:/ARGoose/Tenor
+  Guid:
+    Data1: -1783698508
+    Data2: 1076544805
+    Data3: -1067385437
+    Data4: 1847157103
+  Banks:
+  - {fileID: -1232097060469117408}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 51276
+--- !u!114 &-1232097060469117408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMODProjectFiles/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637906732680000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1042560
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -33,16 +154,20 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -5981461895102247044}
-  - {fileID: 3515988720212373972}
+  - {fileID: -5001369575180423113}
+  - {fileID: -5203176465896130559}
+  - {fileID: -1232097060469117408}
   EditorEvents:
   - {fileID: 5412299986362583699}
+  - {fileID: -5281892077659095015}
+  - {fileID: -6131665011539633231}
+  - {fileID: -3116199078049356739}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3515988720212373972}
+  - {fileID: -5203176465896130559}
   StringsBanks:
-  - {fileID: -5981461895102247044}
-  cacheTime: 637905831360000000
+  - {fileID: -5001369575180423113}
+  cacheTime: 637906732680000000
   cacheVersion: 131591
 --- !u!114 &601623474727628914
 MonoBehaviour:
@@ -63,26 +188,6 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 712
-  Exists: 1
---- !u!114 &3515988720212373972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMODProjectFiles/FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637905831360000000
-  FileSizes:
-  - Name: Desktop
-    Value: 301248
   Exists: 1
 --- !u!114 &4402446944289722486
 MonoBehaviour:
@@ -118,12 +223,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/ARGoose/Soprano
   Guid:
-    Data1: 820918799
-    Data2: 1314820195
-    Data3: 249866910
-    Data4: 1671159107
+    Data1: -1738328783
+    Data2: 1246824531
+    Data3: 404806787
+    Data4: -42449574
   Banks:
-  - {fileID: 3515988720212373972}
+  - {fileID: -1232097060469117408}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
