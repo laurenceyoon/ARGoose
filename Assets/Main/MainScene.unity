@@ -1168,10 +1168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabList:
-  - {fileID: 2645715310704061959, guid: 197e97596499c458ebab4843f7fd7b09, type: 3}
-  - {fileID: 5026031906247036223, guid: 44291c8de6ca045edb15fc0695b13bcc, type: 3}
-  - {fileID: 329079603229047196, guid: fa7c72cbd346c448695421f5462d1b3f, type: 3}
   - {fileID: 5840473277929360902, guid: 5c68089566f654fdf9cc42e1d15d2da8, type: 3}
+  - {fileID: 329079603229047196, guid: fa7c72cbd346c448695421f5462d1b3f, type: 3}
+  - {fileID: 5026031906247036223, guid: 44291c8de6ca045edb15fc0695b13bcc, type: 3}
+  - {fileID: 2645715310704061959, guid: 197e97596499c458ebab4843f7fd7b09, type: 3}
   PitchSlider: {fileID: 2014374987}
   playButton: {fileID: 1501846710}
   InstructionObject: {fileID: 1122331729}
@@ -1846,7 +1846,7 @@ RectTransform:
   m_GameObject: {fileID: 2014374985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 395236241}
   - {fileID: 764861241}

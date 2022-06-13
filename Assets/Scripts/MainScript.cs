@@ -66,7 +66,11 @@ namespace UnityEngine.XR.ARFoundation.Samples
         {
             float newScale = PitchSlider.value;
             Debug.Log($"newScale: {newScale}");
-            selectedGoose.GetComponent<Goose>().pitchScale = PitchSlider.value;
+            if (selectedGoose != null)
+            {
+                selectedGoose.GetComponent<Goose>().pitchScale = PitchSlider.value;
+            }
+            //selectedGoose.GetComponent<Goose>().pitchScale = PitchSlider.value;
             //Vector3 newSize = new Vector3(newScale * selectedInstrument.originalSize.x, newScale * selectedInstrument.originalSize.y, newScale * selectedInstrument.originalSize.z);
             //selectedInstrument.sizeScale = newScale;
             //selectedInstrument.transform.localScale = newSize;
@@ -158,12 +162,10 @@ namespace UnityEngine.XR.ARFoundation.Samples
                     InstructionText.text += $"\nGetTouch(0).phase == TouchPhase.Ended";
                     holding = false;
                 }
-                //if (selectedGoose != null)
-                //{
-                //    InstructionText.text += $"\n!!!!Move Move!!!22222222";
-                //    var hitPose = s_Hits[0].pose;
-                //    Move(hitPose.position, hitPose.rotation);
-                //}
+                if (selectedGoose != null)
+                {
+                    InstructionText.text += $"\nselectedGoose: {selectedGoose.name}";
+                }
             }
             //if (Input.touchCount > 0 && !isDelay && m_RaycastManager.Raycast(Input.GetTouch(0).position, s_Hits))
             //{

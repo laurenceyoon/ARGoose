@@ -16,6 +16,7 @@ public class Goose : MonoBehaviour
         instance.start();
         instance.setPaused(true);
         sizeScale = 1;
+        pitchScale = 0.5f;
         originalSize = transform.localScale;
         choir = gooseName;
     }
@@ -28,7 +29,7 @@ public class Goose : MonoBehaviour
     void Update()
     {
         instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.gameObject));
-        instance.setParameterByName("Pitch", pitchScale);
+        instance.setParameterByName("PitchShifter_UpDown", pitchScale);
     }
 
     public void play()

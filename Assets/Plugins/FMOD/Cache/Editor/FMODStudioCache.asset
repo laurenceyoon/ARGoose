@@ -1,5 +1,93 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8058074205621411544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Soprano/PitchShifter_UpDown
+  m_EditorClassIdentifier: 
+  Name: PitchShifter_UpDown
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.5
+  ID:
+    data1: 3515410720
+    data2: 1946234344
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7701235296465703716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ARGoose_Updated2/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637907631850000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1194
+  Exists: 1
+--- !u!114 &-6520050139517391372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tenor/Flanger_LeftRight
+  m_EditorClassIdentifier: 
+  Name: Flanger_LeftRight
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.5
+  ID:
+    data1: 2673706548
+    data2: 119478103
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6469424933752619973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ARGoose_Updated2/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637907631850000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1128
+  Exists: 1
 --- !u!114 &-6131665011539633231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,19 +102,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/ARGoose/Alto
   Guid:
-    Data1: 648248217
-    Data2: 1323778711
-    Data3: 1394568095
-    Data4: 1334719272
+    Data1: -849888008
+    Data2: 1229693292
+    Data3: 314638730
+    Data4: -2116468348
   Banks:
-  - {fileID: -1232097060469117408}
+  - {fileID: -4993842740264219439}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -4996102728209854096}
+  - {fileID: -1561147078102255342}
   MinDistance: 1
   MaxDistance: 20
-  Length: 50533
+  Length: 52006
+--- !u!114 &-5386403084613692743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tenor/PitchShifter_UpDown
+  m_EditorClassIdentifier: 
+  Name: PitchShifter_UpDown
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.5
+  ID:
+    data1: 3515410720
+    data2: 1946234344
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-5281892077659095015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,20 +155,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/ARGoose/Bass
   Guid:
-    Data1: -964145106
-    Data2: 1204084478
-    Data3: -818926968
-    Data4: -1662699666
+    Data1: -2067085178
+    Data2: 1101133975
+    Data3: -1759946599
+    Data4: -2133681500
   Banks:
-  - {fileID: -1232097060469117408}
+  - {fileID: -4993842740264219439}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 6265634536556375041}
+  - {fileID: 4323147709819434548}
   MinDistance: 1
   MaxDistance: 20
-  Length: 51276
---- !u!114 &-5203176465896130559
+  Length: 51989
+--- !u!114 &-4996102728209854096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,18 +179,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alto/PitchShifter_UpDown
   m_EditorClassIdentifier: 
-  Path: FMODProjectFiles/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637906732670000000
-  FileSizes:
-  - Name: Desktop
-    Value: 1194
+  Name: PitchShifter_UpDown
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.5
+  ID:
+    data1: 3515410720
+    data2: 1946234344
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
---- !u!114 &-5001369575180423113
+--- !u!114 &-4993842740264219439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,15 +204,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/Goose.bank
   m_EditorClassIdentifier: 
-  Path: FMODProjectFiles/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637906732670000000
+  Path: ARGoose_Updated2/Build/Desktop/Goose.bank
+  Name: Goose
+  StudioPath: bank:/Goose
+  lastModified: 637907631850000000
   FileSizes:
   - Name: Desktop
-    Value: 966
+    Value: 1712768
+  Exists: 1
+--- !u!114 &-3566519785454984640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Soprano/Flanger_LeftRight
+  m_EditorClassIdentifier: 
+  Name: Flanger_LeftRight
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.5
+  ID:
+    data1: 2673706548
+    data2: 119478103
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &-3116199078049356739
 MonoBehaviour:
@@ -108,20 +252,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/ARGoose/Tenor
   Guid:
-    Data1: -1783698508
-    Data2: 1076544805
-    Data3: -1067385437
-    Data4: 1847157103
+    Data1: -411902550
+    Data2: 1291733577
+    Data3: 374973336
+    Data4: -18578425
   Banks:
-  - {fileID: -1232097060469117408}
+  - {fileID: -4993842740264219439}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -5386403084613692743}
+  - {fileID: -6520050139517391372}
   MinDistance: 1
   MaxDistance: 20
-  Length: 51276
---- !u!114 &-1232097060469117408
+  Length: 52013
+--- !u!114 &-2958040192418615886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,16 +276,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ARGoose/Percussion
   m_EditorClassIdentifier: 
-  Path: FMODProjectFiles/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 637906732680000000
-  FileSizes:
-  - Name: Desktop
-    Value: 1042560
+  Path: event:/ARGoose/Percussion
+  Guid:
+    Data1: 214678078
+    Data2: 1281764861
+    Data3: -1930321778
+    Data4: 268324964
+  Banks:
+  - {fileID: -4993842740264219439}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 49047
+--- !u!114 &-1561147078102255342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alto/Flanger_LeftRight
+  m_EditorClassIdentifier: 
+  Name: Flanger_LeftRight
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.5
+  ID:
+    data1: 2673706548
+    data2: 119478103
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -154,20 +331,21 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -5001369575180423113}
-  - {fileID: -5203176465896130559}
-  - {fileID: -1232097060469117408}
+  - {fileID: -6469424933752619973}
+  - {fileID: -4993842740264219439}
+  - {fileID: -7701235296465703716}
   EditorEvents:
   - {fileID: 5412299986362583699}
   - {fileID: -5281892077659095015}
   - {fileID: -6131665011539633231}
   - {fileID: -3116199078049356739}
+  - {fileID: -2958040192418615886}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5203176465896130559}
+  - {fileID: -7701235296465703716}
   StringsBanks:
-  - {fileID: -5001369575180423113}
-  cacheTime: 637906732680000000
+  - {fileID: -6469424933752619973}
+  cacheTime: 637907631850000000
   cacheVersion: 131591
 --- !u!114 &601623474727628914
 MonoBehaviour:
@@ -188,6 +366,30 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 712
+  Exists: 1
+--- !u!114 &4323147709819434548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bass/Flanger_LeftRight
+  m_EditorClassIdentifier: 
+  Name: Flanger_LeftRight
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.5
+  ID:
+    data1: 2673706548
+    data2: 119478103
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &4402446944289722486
 MonoBehaviour:
@@ -223,16 +425,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/ARGoose/Soprano
   Guid:
-    Data1: -1738328783
-    Data2: 1246824531
-    Data3: 404806787
-    Data4: -42449574
+    Data1: 855756591
+    Data2: 1231722723
+    Data3: -767106386
+    Data4: -1071654679
   Banks:
-  - {fileID: -1232097060469117408}
+  - {fileID: -4993842740264219439}
   IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3566519785454984640}
+  - {fileID: -8058074205621411544}
   MinDistance: 1
   MaxDistance: 20
   Length: 51989
+--- !u!114 &6265634536556375041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bass/PitchShifter_UpDown
+  m_EditorClassIdentifier: 
+  Name: PitchShifter_UpDown
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0.5
+  ID:
+    data1: 3515410720
+    data2: 1946234344
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1

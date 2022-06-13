@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{14123837-1c7e-4408-937e-74da93bdb155}">
+		<property name="assetPath">
+			<value>Goose_Percussion.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>36</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3d4ca191-728f-40ee-a6ff-ef1f988b09b9}</destination>
+		</relationship>
+	</object>
+</objects>

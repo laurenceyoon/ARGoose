@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{0b872026-8522-4b57-a86f-810d9fb15aa1}">
+		<property name="name">
+			<value>TimeStretch</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0eae2073-a11b-422f-8c47-32044369cef8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{6afe8840-96b1-47a5-aa2d-e1954bd4942f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{6afe8840-96b1-47a5-aa2d-e1954bd4942f}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="velocity">
+			<value>-0.5</value>
+		</property>
+	</object>
+</objects>

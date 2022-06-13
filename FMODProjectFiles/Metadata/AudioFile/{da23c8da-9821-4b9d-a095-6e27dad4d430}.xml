@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{da23c8da-9821-4b9d-a095-6e27dad4d430}">
+		<property name="assetPath">
+			<value>Percussion.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>49.047097505668937</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3d4ca191-728f-40ee-a6ff-ef1f988b09b9}</destination>
+		</relationship>
+	</object>
+</objects>
