@@ -37,4 +37,9 @@ public class Goose : MonoBehaviour
     {
         instance.setPaused(false);
     }
+
+    public void stop()
+    {
+        instance.setPaused(true);
+    }
 }

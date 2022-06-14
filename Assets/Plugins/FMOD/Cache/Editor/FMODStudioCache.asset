@@ -24,26 +24,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7701235296465703716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ARGoose_Updated2/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637907631850000000
-  FileSizes:
-  - Name: Desktop
-    Value: 1194
-  Exists: 1
 --- !u!114 &-6520050139517391372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,26 +48,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-6469424933752619973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ARGoose_Updated2/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637907631850000000
-  FileSizes:
-  - Name: Desktop
-    Value: 1128
-  Exists: 1
 --- !u!114 &-6131665011539633231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +67,7 @@ MonoBehaviour:
     Data3: 314638730
     Data4: -2116468348
   Banks:
-  - {fileID: -4993842740264219439}
+  - {fileID: 5965852201011815327}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -160,7 +120,7 @@ MonoBehaviour:
     Data3: -1759946599
     Data4: -2133681500
   Banks:
-  - {fileID: -4993842740264219439}
+  - {fileID: 5965852201011815327}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -193,26 +153,6 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
-  Exists: 1
---- !u!114 &-4993842740264219439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Goose.bank
-  m_EditorClassIdentifier: 
-  Path: ARGoose_Updated2/Build/Desktop/Goose.bank
-  Name: Goose
-  StudioPath: bank:/Goose
-  lastModified: 637907631850000000
-  FileSizes:
-  - Name: Desktop
-    Value: 1712768
   Exists: 1
 --- !u!114 &-3566519785454984640
 MonoBehaviour:
@@ -257,7 +197,7 @@ MonoBehaviour:
     Data3: 374973336
     Data4: -18578425
   Banks:
-  - {fileID: -4993842740264219439}
+  - {fileID: 5965852201011815327}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -267,33 +207,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 52013
---- !u!114 &-2958040192418615886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ARGoose/Percussion
-  m_EditorClassIdentifier: 
-  Path: event:/ARGoose/Percussion
-  Guid:
-    Data1: 214678078
-    Data2: 1281764861
-    Data3: -1930321778
-    Data4: 268324964
-  Banks:
-  - {fileID: -4993842740264219439}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 49047
 --- !u!114 &-1561147078102255342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,21 +244,20 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -6469424933752619973}
-  - {fileID: -4993842740264219439}
-  - {fileID: -7701235296465703716}
+  - {fileID: 9203851745128641676}
+  - {fileID: 5965852201011815327}
+  - {fileID: 1774125486747031727}
   EditorEvents:
   - {fileID: 5412299986362583699}
   - {fileID: -5281892077659095015}
   - {fileID: -6131665011539633231}
   - {fileID: -3116199078049356739}
-  - {fileID: -2958040192418615886}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -7701235296465703716}
+  - {fileID: 1774125486747031727}
   StringsBanks:
-  - {fileID: -6469424933752619973}
-  cacheTime: 637907631850000000
+  - {fileID: 9203851745128641676}
+  cacheTime: 637908416610000000
   cacheVersion: 131591
 --- !u!114 &601623474727628914
 MonoBehaviour:
@@ -366,6 +278,26 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 712
+  Exists: 1
+--- !u!114 &1774125486747031727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODProjectFiles/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637908416610000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1194
   Exists: 1
 --- !u!114 &4323147709819434548
 MonoBehaviour:
@@ -430,7 +362,7 @@ MonoBehaviour:
     Data3: -767106386
     Data4: -1071654679
   Banks:
-  - {fileID: -4993842740264219439}
+  - {fileID: 5965852201011815327}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -440,6 +372,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 51989
+--- !u!114 &5965852201011815327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Goose.bank
+  m_EditorClassIdentifier: 
+  Path: FMODProjectFiles/Build/Desktop/Goose.bank
+  Name: Goose
+  StudioPath: bank:/Goose
+  lastModified: 637908416610000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1325600
+  Exists: 1
 --- !u!114 &6265634536556375041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,4 +415,24 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &9203851745128641676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMODProjectFiles/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637908416610000000
+  FileSizes:
+  - Name: Desktop
+    Value: 1088
   Exists: 1

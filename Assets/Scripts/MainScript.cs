@@ -21,7 +21,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         public List<GameObject> prefabList;
         public GameObject spawnedObject { get; private set; }
         public Slider PitchSlider, FlangerSlider;
-        public GameObject PlayController, EffectController, InstructionObject;
+        public GameObject PlayController, EffectController, InstructionObject, PlayButton, StopButton;
         public enum UserState
         {
             Initializing,
@@ -88,7 +88,18 @@ namespace UnityEngine.XR.ARFoundation.Samples
             {
                 instance.GetComponent<Goose>().play();
             }
-            PlayController.SetActive(false);
+            PlayButton.SetActive(false);
+            StopButton.SetActive(true);
+        }
+
+        public void stopMusic()
+        {
+            foreach (var instance in GoosePrefabs)
+            {
+                instance.GetComponent<Goose>().stop();
+            }
+            StopButton.SetActive(false);
+            PlayButton.SetActive(true);
         }
 
         void Awake()
@@ -122,7 +133,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
                         {
                             PlayController.SetActive(true);
                             EffectController.SetActive(true);
-                            InstructionText.text = $"Enjoy!";
+                            InstructionText.text = "Enjoy! 🦢❤️";
                         }
                     }
                 }
