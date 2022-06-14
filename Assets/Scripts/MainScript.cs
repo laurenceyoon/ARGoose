@@ -35,8 +35,8 @@ namespace UnityEngine.XR.ARFoundation.Samples
         /// The object instantiated as a result of a successful raycast intersection with a plane.
         /// </summary>
         public GameObject spawnedObject { get; private set; }
-        public Slider PitchSlider;
-        public GameObject playButton, InstructionObject, menuObject;
+        public Slider PitchSlider, FlangerSlider;
+        public GameObject PlayController, EffectController, InstructionObject;
         public enum UserState
         {
             Initializing,
@@ -62,19 +62,28 @@ namespace UnityEngine.XR.ARFoundation.Samples
         private GameObject selectedGoose;
         private bool holding;
 
-        public void onValueChange()
+        public void onPitchScaleChange()
         {
             float newScale = PitchSlider.value;
-            Debug.Log($"newScale: {newScale}");
-            if (selectedGoose != null)
+            if (GoosePrefabs.Count > 0)
             {
-                selectedGoose.GetComponent<Goose>().pitchScale = PitchSlider.value;
+                foreach (GameObject goose in GoosePrefabs)
+                {
+                    goose.GetComponent<Goose>().pitchScale = newScale;
+                }
             }
-            //selectedGoose.GetComponent<Goose>().pitchScale = PitchSlider.value;
-            //Vector3 newSize = new Vector3(newScale * selectedInstrument.originalSize.x, newScale * selectedInstrument.originalSize.y, newScale * selectedInstrument.originalSize.z);
-            //selectedInstrument.sizeScale = newScale;
-            //selectedInstrument.transform.localScale = newSize;
-            //InstructionText.text = selectedInstrument.name +" : "+ holding.ToString()+", "+ newScale.ToString()+", "+ instrumentSizeSlider.value.ToString();
+        }
+
+        public void onFlangerScaleChange()
+        {
+            float newScale = FlangerSlider.value;
+            if (GoosePrefabs.Count > 0)
+            {
+                foreach (GameObject goose in GoosePrefabs)
+                {
+                    goose.GetComponent<Goose>().flangerScale = newScale;
+                }
+            }
         }
 
         public void playMusic()
@@ -84,19 +93,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
             {
                 instance.GetComponent<Goose>().play();
             }
-            playButton.SetActive(false);
+            PlayController.SetActive(false);
         }
-        //{
-        //    Debug.Log($"play music!");
-        //    var fmodInstance = FMODUnity.RuntimeManager.CreateInstance("event:/ARGoose/Soprano");
-        //    fmodInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.gameObject));
-        //    fmodInstance.start();
-        //    //fmodInstance.setPaused(true);
-        //    fmodInstance.setPaused(false);
-        //}
 
         void Awake()
         {
+            InstructionText.text = $"Place the {names[counter]}";
             m_RaycastManager = GetComponent<ARRaycastManager>();
             fmodInstances = new List<FMOD.Studio.EventInstance>();
             GoosePrefabs = new List<GameObject>();
@@ -104,29 +106,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
             counter = 0;
         }
 
-        bool TryGetTouchPosition(out Vector2 touchPosition)
-        {
-            if (Input.touchCount > 0)
-            {
-                touchPosition = Input.GetTouch(0).position;
-                return true;
-            }
-
-            touchPosition = default;
-            return false;
-        }
-
         void Update()
         {
             if (Input.touchCount > 0)
             {
-                //var hitPose = s_Hits[0].pose;
-                //InstructionText.text += $"\nhitPose: {hitPose}";
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
-                    InstructionText.text = $"GetTouch(0).phase == TouchPhase.Began";
-                    InstructionText.text += $"\nGetTouch(0): {Input.GetTouch(0)}";
-                    holding = true;
                     if (!isDelay && m_RaycastManager.Raycast(Input.GetTouch(0).position, s_Hits))
                     {
                         var hitPose = s_Hits[0].pose;
@@ -134,55 +119,19 @@ namespace UnityEngine.XR.ARFoundation.Samples
                         {
                             isDelay = true;
                             Invoke("setNextObject", 1.0f);
-                            InstructionText.text += $"\nPlace the {names[counter]}, updated counter: {counter}";
                             instantiateGoose(hitPose);
                             counter++;
                             isDelay = false;
                         }
-                        //else
-                        //{
-                        //    InstructionText.text += $"\n!!!!Move Move!!!1111 selectedGoose: {selectedGoose.name}";
-                        //    selectedGoose.transform.position = hitPose.position;
-                        //}
+                        if (counter == prefabList.Count)  // Goose placement has been completed!
+                        {
+                            PlayController.SetActive(true);
+                            EffectController.SetActive(true);
+                            InstructionText.text = $"Enjoy!";
+                        }
                     }
-                    //Ray ray = arCamera.ScreenPointToRay(Input.GetTouch(0).position);
-                    //InstructionText.text += $"\nray: {ray}";
-                    //RaycastHit hit;
-                    //if (Physics.Raycast(ray, out hit))
-                    //{
-                    //    InstructionText.text += $"\nrhit: {hit}";
-                    //    InstructionText.text += $"\nPhysics.Raycast(ray, out hit): {Physics.Raycast(ray, out hit)}";
-                    //    selectedGoose = hit.transform.GetComponent<Goose>();
-                    //    InstructionText.text += $"\nselectedGoose: {selectedGoose}";
-                    //    holding = selectedGoose != null;
-                    //}
-                }
-                if (Input.GetTouch(0).phase == TouchPhase.Ended)
-                {
-                    InstructionText.text += $"\nGetTouch(0).phase == TouchPhase.Ended";
-                    holding = false;
-                }
-                if (selectedGoose != null)
-                {
-                    InstructionText.text += $"\nselectedGoose: {selectedGoose.name}";
                 }
             }
-            //if (Input.touchCount > 0 && !isDelay && m_RaycastManager.Raycast(Input.GetTouch(0).position, s_Hits))
-            //{
-            //    var hitPose = s_Hits[0].pose;
-            //    if (counter < prefabList.Count)
-            //    {
-            //        isDelay = true;
-            //        Invoke("setNextObject", 1.0f);
-            //        instantiateGoose(hitPose);
-            //        counter++;
-            //    }
-            //    else
-            //    {
-            //        if (holding)
-            //            Move(hitPose.position, hitPose.rotation);
-            //    }
-            //}
         }
 
         private void instantiateGoose(Pose hitPose)
@@ -198,11 +147,9 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         private void setNextObject()
         {
-            isDelay = false;
-            InstructionText.text += $"\nsetNextObject, counter: {counter}";
             if (counter < prefabList.Count)
             {
-                InstructionText.text += $"\nPlace the {names[counter]}, updated counter: {counter}";
+                InstructionText.text = $"Place the {names[counter]}";
             }
         }
 

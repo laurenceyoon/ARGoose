@@ -5,8 +5,8 @@ using UnityEngine;
 public class Goose : MonoBehaviour
 {
     public FMOD.Studio.EventInstance instance;
-    public float sizeScale;
-    public float pitchScale;  // 0 ~ 1 사이 
+    public float pitchScale;  // 0 ~ 1 사이
+    public float flangerScale;  // 0 ~ 1 사이
     public Vector3 originalSize;
     public string choir;
 
@@ -15,8 +15,8 @@ public class Goose : MonoBehaviour
         instance = fmodInstance;
         instance.start();
         instance.setPaused(true);
-        sizeScale = 1;
         pitchScale = 0.5f;
+        flangerScale = 0.5f;
         originalSize = transform.localScale;
         choir = gooseName;
     }
@@ -30,6 +30,7 @@ public class Goose : MonoBehaviour
     {
         instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.gameObject));
         instance.setParameterByName("PitchShifter_UpDown", pitchScale);
+        instance.setParameterByName("Flanger_LeftRight", flangerScale);
     }
 
     public void play()
