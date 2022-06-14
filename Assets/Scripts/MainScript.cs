@@ -18,22 +18,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
     {
         [SerializeField]
         [Tooltip("Instantiates this prefab on a plane at the touch location.")]
-        //GameObject m_PlacedPrefab;
         public List<GameObject> prefabList;
-
-
-        /// <summary>
-        /// The prefab to instantiate on touch.
-        /// </summary>
-        //public GameObject placedPrefab
-        //{
-        //    get { return m_PlacedPrefab; }
-        //    set { m_PlacedPrefab = value; }
-        //}
-
-        /// <summary>
-        /// The object instantiated as a result of a successful raycast intersection with a plane.
-        /// </summary>
         public GameObject spawnedObject { get; private set; }
         public Slider PitchSlider, FlangerSlider;
         public GameObject PlayController, EffectController, InstructionObject;
@@ -60,16 +45,21 @@ namespace UnityEngine.XR.ARFoundation.Samples
         private int counter = 0;
         private bool isDelay = false;
         private GameObject selectedGoose;
-        private bool holding;
 
         public void onPitchScaleChange()
         {
             float newScale = PitchSlider.value;
-            if (GoosePrefabs.Count > 0)
+            float sizeRatio = newScale + 0.5f;
+            if (GoosePrefabs != null && GoosePrefabs.Count > 0)
             {
                 foreach (GameObject goose in GoosePrefabs)
                 {
-                    goose.GetComponent<Goose>().pitchScale = newScale;
+                    Goose gooseComponent = goose.GetComponent<Goose>();
+                    gooseComponent.pitchScale = newScale;
+                    Transform gooseBody = goose.transform.GetChild(0);
+                    Vector3 originScale = gooseComponent.originalScale;
+                    Vector3 newSize = new Vector3(gooseBody.localScale.x, originScale.y * sizeRatio, gooseBody.localScale.z);
+                    gooseBody.localScale = newSize;
                 }
             }
         }
@@ -77,18 +67,23 @@ namespace UnityEngine.XR.ARFoundation.Samples
         public void onFlangerScaleChange()
         {
             float newScale = FlangerSlider.value;
-            if (GoosePrefabs.Count > 0)
+            float sizeRatio = newScale + 0.5f;
+            if (GoosePrefabs != null && GoosePrefabs.Count > 0)
             {
                 foreach (GameObject goose in GoosePrefabs)
                 {
-                    goose.GetComponent<Goose>().flangerScale = newScale;
+                    Goose gooseComponent = goose.GetComponent<Goose>();
+                    gooseComponent.flangerScale = newScale;
+                    Transform gooseBody = goose.transform.GetChild(0);
+                    Vector3 originScale = gooseComponent.originalScale;
+                    Vector3 newSize = new Vector3(originScale.x * sizeRatio, gooseBody.localScale.y, gooseBody.localScale.z);
+                    gooseBody.localScale = newSize;
                 }
             }
         }
 
         public void playMusic()
         {
-            Debug.Log($"play music!");
             foreach (var instance in GoosePrefabs)
             {
                 instance.GetComponent<Goose>().play();
@@ -140,7 +135,8 @@ namespace UnityEngine.XR.ARFoundation.Samples
             spawnedObject.SetActive(true);
             GoosePrefabs.Add(spawnedObject);
             var fmodInstance = FMODUnity.RuntimeManager.CreateInstance("event:/ARGoose/" + names[counter]);
-            spawnedObject.GetComponent<Goose>().Init(fmodInstance, names[counter]);
+            Vector3 originScale = spawnedObject.transform.GetChild(0).localScale;
+            spawnedObject.GetComponent<Goose>().Init(fmodInstance, names[counter], originScale);
             fmodInstances.Add(fmodInstance);
             selectedGoose = spawnedObject;
         }

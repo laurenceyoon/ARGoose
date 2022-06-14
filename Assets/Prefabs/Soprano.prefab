@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126bd9634ca3f4b4bbf9342c40c2a2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeScale: 0
   pitchScale: 0
+  flangerScale: 0
   originalSize: {x: 0, y: 0, z: 0}
   choir: 
 --- !u!1 &6781992439060047610
@@ -249,6 +249,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2645715310704061958}
     m_Modifications:
+    - target: {fileID: 2442299988796791705, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442299988796791709, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442299988796791711, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Body
+      objectReference: {fileID: 0}
     - target: {fileID: 4539480871733319284, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -308,6 +320,42 @@ PrefabInstance:
     - target: {fileID: 4539480871733319285, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
       propertyPath: m_Name
       value: Goose
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834424740875121705, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834424740875121709, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834424740875121711, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933216742277773019, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933216742277773021, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933216742277773023, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971799155286457608, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971799155286457610, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971799155286457614, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}
+      propertyPath: m_TagString
+      value: Legs
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f05af94975289e4eaaf96b0e78bda15, type: 3}

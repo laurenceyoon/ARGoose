@@ -7,17 +7,17 @@ public class Goose : MonoBehaviour
     public FMOD.Studio.EventInstance instance;
     public float pitchScale;  // 0 ~ 1 사이
     public float flangerScale;  // 0 ~ 1 사이
-    public Vector3 originalSize;
+    public Vector3 originalScale;
     public string choir;
 
-    public void Init(FMOD.Studio.EventInstance fmodInstance, string gooseName)
+    public void Init(FMOD.Studio.EventInstance fmodInstance, string gooseName, Vector3 initialScale)
     {
         instance = fmodInstance;
         instance.start();
         instance.setPaused(true);
         pitchScale = 0.5f;
         flangerScale = 0.5f;
-        originalSize = transform.localScale;
+        originalScale = initialScale;
         choir = gooseName;
     }
     // Start is called before the first frame update
