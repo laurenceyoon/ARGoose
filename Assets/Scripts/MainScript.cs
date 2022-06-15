@@ -114,6 +114,11 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         void Update()
         {
+            if (counter == prefabList.Count) // Goose placement has been completed
+            {
+                transform.GetComponent<ARPlaneManager>().SetTrackablesActive(false);
+            }
+
             if (Input.touchCount > 0)
             {
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
@@ -129,11 +134,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
                             counter++;
                             isDelay = false;
                         }
-                        if (counter == prefabList.Count)  // Goose placement has been completed!
+                        if (counter == prefabList.Count)  // Goose placement has just been completed!
                         {
                             PlayController.SetActive(true);
                             EffectController.SetActive(true);
                             InstructionText.text = "Enjoy! 🦢❤️";
+                            transform.GetComponent<ARPlaneManager>().SetTrackablesActive(false);
                         }
                     }
                 }
