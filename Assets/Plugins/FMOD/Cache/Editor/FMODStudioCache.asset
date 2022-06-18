@@ -69,13 +69,13 @@ MonoBehaviour:
   Banks:
   - {fileID: 5965852201011815327}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: -4996102728209854096}
   - {fileID: -1561147078102255342}
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 4
   Length: 52006
 --- !u!114 &-5386403084613692743
 MonoBehaviour:
@@ -122,13 +122,13 @@ MonoBehaviour:
   Banks:
   - {fileID: 5965852201011815327}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: 6265634536556375041}
   - {fileID: 4323147709819434548}
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 4
   Length: 51989
 --- !u!114 &-4996102728209854096
 MonoBehaviour:
@@ -199,13 +199,13 @@ MonoBehaviour:
   Banks:
   - {fileID: 5965852201011815327}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: -5386403084613692743}
   - {fileID: -6520050139517391372}
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 4
   Length: 52013
 --- !u!114 &-1561147078102255342
 MonoBehaviour:
@@ -257,7 +257,7 @@ MonoBehaviour:
   - {fileID: 1774125486747031727}
   StringsBanks:
   - {fileID: 9203851745128641676}
-  cacheTime: 637908416610000000
+  cacheTime: 637911588410000000
   cacheVersion: 131591
 --- !u!114 &601623474727628914
 MonoBehaviour:
@@ -294,7 +294,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637908416610000000
+  lastModified: 637911588410000000
   FileSizes:
   - Name: Desktop
     Value: 1194
@@ -364,13 +364,13 @@ MonoBehaviour:
   Banks:
   - {fileID: 5965852201011815327}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: -3566519785454984640}
   - {fileID: -8058074205621411544}
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 4
   Length: 51989
 --- !u!114 &5965852201011815327
 MonoBehaviour:
@@ -387,10 +387,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/Build/Desktop/Goose.bank
   Name: Goose
   StudioPath: bank:/Goose
-  lastModified: 637908416610000000
+  lastModified: 637911588410000000
   FileSizes:
   - Name: Desktop
-    Value: 1325600
+    Value: 1327360
   Exists: 1
 --- !u!114 &6265634536556375041
 MonoBehaviour:
@@ -431,7 +431,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637908416610000000
+  lastModified: 637911588410000000
   FileSizes:
   - Name: Desktop
     Value: 1088

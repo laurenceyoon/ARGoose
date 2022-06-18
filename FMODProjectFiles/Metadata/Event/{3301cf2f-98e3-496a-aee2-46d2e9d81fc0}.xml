@@ -5,7 +5,7 @@
 			<value>Soprano</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{77ecbf02-23b6-4db4-821f-d620fe5abd52}</destination>
@@ -60,7 +60,17 @@
 			<destination>{38468b0d-f6bd-4bc9-bed9-df698700b613}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{50e249e3-67aa-4650-b11c-0cfbee4d6c80}" />
+	<object class="EventAutomatableProperties" id="{50e249e3-67aa-4650-b11c-0cfbee4d6c80}">
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{b1bcc193-8b00-44ea-ac42-1fd76df4d55b}" />
 	<object class="GroupTrack" id="{6913c5a5-d30b-4e3b-bce3-45be95fdacda}">
 		<relationship name="automationTracks">
@@ -164,6 +174,8 @@
 	<object class="MixerBusEffectChain" id="{9e00d552-5431-4d59-9b7b-cfff3f12e803}">
 		<relationship name="effects">
 			<destination>{04e4260b-79e5-4a48-98b1-60a8436d04f1}</destination>
+			<destination>{9ab0307f-20b9-469b-b70d-b09c838544d8}</destination>
+			<destination>{5f4fa0db-65f4-4fb7-8a98-488841089fcb}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{613bf56b-c8c0-4554-8cec-28458524c856}" />
@@ -177,6 +189,37 @@
 	</object>
 	<object class="MixerBusPanner" id="{4ba2e3da-d0af-493c-b61f-37462650fd38}" />
 	<object class="MixerBusFader" id="{04e4260b-79e5-4a48-98b1-60a8436d04f1}" />
+	<object class="ObjectSpatialiserEffect" id="{9ab0307f-20b9-469b-b70d-b09c838544d8}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>4</value>
+		</property>
+		<property name="extentMode">
+			<value>2</value>
+		</property>
+	</object>
+	<object class="SpatialiserEffect" id="{5f4fa0db-65f4-4fb7-8a98-488841089fcb}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>4</value>
+		</property>
+		<property name="extentMode">
+			<value>2</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>18.4728718</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{482c6754-654d-4e27-a642-e09bcd412015}" />
 	<object class="PitchShifterEffect" id="{38c91096-2259-41db-bf22-8e5df90409f1}">
 		<relationship name="automators">
