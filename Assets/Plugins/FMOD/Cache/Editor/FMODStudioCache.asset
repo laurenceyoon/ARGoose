@@ -257,7 +257,7 @@ MonoBehaviour:
   - {fileID: 1774125486747031727}
   StringsBanks:
   - {fileID: 9203851745128641676}
-  cacheTime: 637911588410000000
+  cacheTime: 637980796773241361
   cacheVersion: 131591
 --- !u!114 &601623474727628914
 MonoBehaviour:
@@ -294,7 +294,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637911588410000000
+  lastModified: 637980796773236446
   FileSizes:
   - Name: Desktop
     Value: 1194
@@ -387,7 +387,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/Build/Desktop/Goose.bank
   Name: Goose
   StudioPath: bank:/Goose
-  lastModified: 637911588410000000
+  lastModified: 637980796773217219
   FileSizes:
   - Name: Desktop
     Value: 1327360
@@ -431,7 +431,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637911588410000000
+  lastModified: 637980796773241361
   FileSizes:
   - Name: Desktop
     Value: 1088
