@@ -62,3 +62,5 @@ crashlytics-build.properties
 # Log files
 *.log
 
+# build
+build*/
